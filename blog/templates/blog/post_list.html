@@ -1,12 +1,20 @@
 <html>
 <head>
            <title>Helen's blog</title>
-    </head>
+</head>
     <h1>My first littel blog</h1>
+   <body>
     <div>
             <h1><a href="">Django Girls Blog</a></h1>
     </div>
-
+	{% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+</body>
     <p> <b>Hi there! </b></p>
     <p>It works!</p>
 </html>
